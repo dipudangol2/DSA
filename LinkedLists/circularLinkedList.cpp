@@ -100,7 +100,7 @@ void insertAtTheBeginning(CircularLinkedList *list, int data)
 // delete at the end
 void deleteAtTheEnd(CircularLinkedList *list)
 {
-    Node *current = list->head,*preCurrent;
+    Node *current = list->head, *preCurrent;
     if (list->head == NULL)
     {
         printf("List is empty\n");
@@ -114,10 +114,10 @@ void deleteAtTheEnd(CircularLinkedList *list)
     }
     while (current->next != list->head)
     {
-        preCurrent=current;
+        preCurrent = current;
         current = current->next;
     }
-    preCurrent->next=list->head;
+    preCurrent->next = list->head;
     // current->prev->next = list->head;
     // list->head->prev = current->prev;
     free(current);
