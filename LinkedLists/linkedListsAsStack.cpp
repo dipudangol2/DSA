@@ -32,7 +32,7 @@ int pop()
     if (tos == NULL)
     {
         printf("Stack Empty!");
-        return;
+        exit(0);
     }
     else
     {
