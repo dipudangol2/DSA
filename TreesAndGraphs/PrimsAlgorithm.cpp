@@ -1,38 +1,76 @@
+#include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
-int a, b, u, v, n, i, j, ne = 1;
-int visited[10] = {0}, min, mincost = 0, cost[10][10];
+
+int arr_size;
+
+#define MAX 10
+
+int minKey(int key[], bool mstSet[], int arr_size)
+{
+    // Initialize min value
+    int min = INT_MAX, min_index;
+
+    for (int v = 0; v < arr_size; v++)
+        if (mstSet[v] == false && key[v] < min)
+            min = key[v], min_index = v;
+
+    return min_index;
+}
+
+void printMST(int parent[], int graph[][MAX], int arr_size)
+{
+    printf("Edge \tWeight\n");
+    for (int i = 1; i < arr_size; i++)
+        printf("%d - %d \t%d \n", parent[i], i,
+               graph[i][parent[i]]);
+}
+
+void primMST(int graph[][MAX], int arr_size)
+{
+    int parent[MAX];
+    int key[MAX];
+    bool mstSet[MAX];
+
+    for (int i = 0; i < arr_size; i++)
+        key[i] = INT_MAX, mstSet[i] = false;
+
+    key[0] = 0;
+
+    parent[0] = -1;
+
+    for (int count = 0; count < arr_size - 1; count++)
+    {
+
+        int u = minKey(key, mstSet, arr_size);
+
+        mstSet[u] = true;
+
+        for (int v = 0; v < arr_size; v++)
+
+            if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v])
+                parent[v] = u, key[v] = graph[u][v];
+    }
+
+    printMST(parent, graph, arr_size);
+}
+
+// Driver's code
 int main()
 {
-    printf("Enter the number of nodes:");
-    scanf("%d", &n);
-    printf("\nEnter the adjacency matrix:\n");
-    for (i = 1; i <= n; i++)
-        for (j = 1; j <= n; j++)
-            scanf("%d", &cost[i][j]);
-    if (cost[i][j] == 0)
-        cost[i][j] = 999;
-
-    visited[1] = 1;
-    printf("\n");
-    while (ne < n)
+    printf("Enter the size of matrix:");
+    scanf("%d", &arr_size);
+    int graph[arr_size][MAX];
+    printf("Enter the adjacency matrix:\n");
+    for (int i = 0; i < arr_size; i++)
     {
-        for (i = 1, min = 999; i <= n; i++)
-            for (j = 1; j <= n; j++)
-                if (cost[i][j] < min)
-                    if (visited[i] != 0)
-                    {
-                        min = cost[i][j];
-                        a = u = i;
-                        b = v = j;
-                    }
-        if (visited[u] == 0 || visited[v] == 0)
+        for (int j = 0; j < arr_size; j++)
         {
-            printf("\n Edge %d:(%d->%d)cost:%d", ne++, a, b, min);
-            mincost += min;
-            visited[b] = 1;
+            scanf("%d", &graph[i][j]);
         }
-        cost[a][b] = cost[b][a] = 999;
     }
-    printf("\nMinimum cost=%d", mincost);
+
+    primMST(graph, arr_size);
+
     return 0;
 }
