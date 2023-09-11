@@ -6,6 +6,7 @@
 int main()
 {
     int a[size], i, low, high, mid, n, found = 0;
+    printf("Binary Search:\n");
     printf("\nEnter the elements of the array: ");
     for (i = 0; i < size; i++)
     {

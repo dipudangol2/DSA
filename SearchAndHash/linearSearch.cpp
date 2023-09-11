@@ -41,6 +41,7 @@ int main()
     int array[10];
     int key, i;
     int n = sizeof(array) / sizeof(array[0]);
+    printf("Linear Search:\n");
     printf("Enter Array Elements:");
     for (i = 0; i < n; i++)
     {

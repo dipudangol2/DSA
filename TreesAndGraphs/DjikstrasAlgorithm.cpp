@@ -8,6 +8,7 @@ void dijkstra(int G[MAX][MAX], int n, int startnode);
 int main()
 {
     int G[MAX][MAX], i, j, n, u;
+    printf("Dijkstra's Algorithm:\n");
     printf("Enter no. of vertices:");
     scanf("%d", &n);
     printf("\nEnter the adjacency matrix:\n");
@@ -17,6 +18,7 @@ int main()
     printf("\nEnter the starting node:");
     scanf("%d", &u);
     dijkstra(G, n, u);
+    printf("\n");
     return 0;
 }
 

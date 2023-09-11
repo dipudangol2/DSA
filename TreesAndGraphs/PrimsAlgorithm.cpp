@@ -58,6 +58,7 @@ void primMST(int graph[][MAX], int arr_size)
 // Driver's code
 int main()
 {
+    printf("Prim's Algorithm:\n");
     printf("Enter the size of matrix:");
     scanf("%d", &arr_size);
     int graph[arr_size][MAX];

@@ -4,6 +4,7 @@
 int main()
 {
     int i, j, n, temp, arr[10];
+    printf("Bubble Sort:\n");
 
     printf("Enter the numbers element of the array: ");
     scanf("%d", &n);

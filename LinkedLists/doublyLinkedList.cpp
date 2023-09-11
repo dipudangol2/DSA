@@ -163,12 +163,12 @@ void deleteAtTheGivenIndex(LinkedList *list, int index)
     Node *current = list->head;
     for (int i = 0; i < index; i++)
     {
-        current = current->next;//index 1
+        current = current->next; // index 1
     }
     // Node *temp = current->next;//index 1
-    current->prev->next = current->next;//index 0->next=index 2
-    current->next->prev = current->prev;//index 2->prev=index 0
-    free(current);//index 1
+    current->prev->next = current->next; // index 0->next=index 2
+    current->next->prev = current->prev; // index 2->prev=index 0
+    free(current);                       // index 1
     list->size--;
 }
 
@@ -188,7 +188,7 @@ int main()
 {
     LinkedList *list = createLinkedList();
     int choice, data, index;
-
+    printf("Doubly Linked List:\n");
     do
     {
         printf("1. Insert at the end\n");

@@ -38,12 +38,16 @@ int main()
             {
             case 1:
                 insert_beg();
+                display();
+
                 break;
             case 2:
                 insert_end();
+                display();
                 break;
             case 3:
                 insert_pos();
+                display();
                 break;
             case 4:
                 exit(0);
@@ -66,12 +70,18 @@ int main()
             {
             case 1:
                 delete_beg();
+                display();
+
                 break;
             case 2:
                 delete_end();
+                display();
+
                 break;
             case 3:
                 delete_pos();
+                display();
+
                 break;
             case 4:
                 exit(0);

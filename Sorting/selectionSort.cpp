@@ -2,6 +2,7 @@
 int main()
 {
     int a[100], n, i, j, position, swap;
+    printf("Selection Sort:\n");
     printf("Enter number of elements:");
     scanf("%d", &n);
     printf("Enter %d Numbers:", n);

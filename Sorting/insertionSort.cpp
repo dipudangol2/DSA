@@ -3,6 +3,7 @@ int main()
 {
     int n, i, j, temp;
     int arr[64];
+    printf("Insertion Sort:\n");
     printf("Enter number of elements\n");
     scanf("%d", &n);
     printf("Enter the numbers:");

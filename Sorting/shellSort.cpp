@@ -22,6 +22,7 @@ void ShellSort(int a[], int n)
 int main()
 {
     int i, n, a[10];
+    printf("Shell Sort:\n");
     printf("Enter the number of elements : ");
     scanf("%d", &n);
     printf("Enter the elements : ");

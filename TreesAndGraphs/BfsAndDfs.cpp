@@ -100,6 +100,7 @@ int main()
     int node, size, i = 0, j;
     int start = 1;
     int a[MAX][MAX];
+    printf("BFS and DFS:\n");
     printf("Enter the number of vertices: ");
     scanf("%d", &size);
     int visited[size];
@@ -107,7 +108,7 @@ int main()
     {
         visited[i] = 0;
     }
-    printf("Enter the Adjacency matrix: ");
+    printf("Enter the Adjacency matrix:\n ");
 
     for (i = 0; i < size; i++)
     {
@@ -123,6 +124,7 @@ int main()
     BFS(&q, a, visited, start, size);
     printf("\nDFS: ");
     DFS(a, start, size);
+    printf("\n");
     free(q.arr);
     return 0;
 }

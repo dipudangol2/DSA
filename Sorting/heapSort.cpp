@@ -77,6 +77,7 @@ void printArray(int arr[], int N)
 int main()
 {
     int N, i;
+    printf("Heap Sort:\n ");
     printf("Enter the number of elements: ");
     scanf("%d", &N);
     int arr[N];
